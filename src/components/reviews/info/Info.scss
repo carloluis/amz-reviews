@@ -1,0 +1,19 @@
+@import '../../../styles/palette.scss';
+
+.container {
+    font-weight: 600;
+    max-width: 140px;
+    line-height: 1.4;
+
+    .title {
+        text-transform: capitalize;
+        color: $light-font;
+    }
+
+    .text {
+        color: $dark-font;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}

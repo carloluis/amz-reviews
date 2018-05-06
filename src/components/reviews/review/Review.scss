@@ -1,19 +1,37 @@
+@import '../../../styles/palette.scss';
+
 .container {
     max-width: 750px;
-    height: 242px;
+    min-height: 120px;
     margin: 32px auto;
-    border: 1px solid;
+    border: 1px solid $grey;
     border-radius: 16px;
     padding: 32px;
 
     .header {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
+        flex-flow: row wrap;
+        align-items: center;
+        margin-bottom: 32px;
+
+        .image {
+            width: 48px;
+            height: 48px;
+            background: $grey;
+            border-radius: 8px;
+        }
     }
 
     .content {
+        color: $light-font;
+
         & > span {
             font-weight: 600;
+            color: $dark-font;
+        }
+        & > p {
+            line-height: 1.4;
         }
     }
 }
