@@ -51,11 +51,10 @@ class Reviews extends React.Component {
     }
     render() {
         const { loading, reviews } = this.state;
+
         return (
             <div className={styles.container}>
-                <div className={styles.action}>
-                    <Button text="REFRESH" onClick={this.handleRefresh} />
-                </div>
+                <Button text="REFRESH" onClick={this.handleRefresh} />
                 <div>{reviews.map(review => <Review key={review.reviewId} {...review} />)}</div>
                 {loading && <div className={styles.loading}>Loading...</div>}
             </div>

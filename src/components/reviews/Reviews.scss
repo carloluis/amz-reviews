@@ -2,14 +2,14 @@
 
 .container {
     margin: 32px auto;
-
-    .action {
-        display: flex;
-        justify-content: flex-end;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-end;
 
     .loading {
         color: $dark-font;
-        text-align: center;
+        align-self: center;
+        margin: 16px auto;
     }
 }
