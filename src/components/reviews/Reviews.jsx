@@ -5,22 +5,52 @@ import styles from './Reviews.scss';
 class Reviews extends React.Component {
     constructor(props) {
         super(props);
+
+        this.fetchReviews = this.fetchReviews.bind(this);
+        this.handleScroll = this.handleScroll.bind(this);
+
         this.state = {
             reviews: [],
-            hasMore: false
+            hasMore: false,
+            page: 1
         };
     }
     componentDidMount() {
-        fetch('/reviews/1')
+        this.fetchReviews();
+        window.addEventListener('scroll', this.handleScroll);
+    }
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+    fetchReviews(page = 1) {
+        this.setState({ loading: true, page });
+
+        fetch(`/reviews/${page}`)
             .then(response => response.json())
-            .then(({ reviews, hasMore }) => this.setState({ reviews, hasMore }))
-            .catch(err => console.error(err));
+            .then(({ reviews, hasMore }) => {
+                this.setState(state => ({ reviews: [...state.reviews, ...reviews], hasMore, loading: false }));
+                if (!hasMore) {
+                    this.componentWillUnmount();
+                }
+            })
+            .catch(err => console.error(err))
+            .finally(() => this.setState({ loading: false }));
+    }
+    handleScroll() {
+        const { loading, page } = this.state;
+        const { documentElement } = document;
+        // https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight
+        if (!loading && documentElement.scrollHeight - documentElement.scrollTop === documentElement.clientHeight) {
+            this.fetchReviews(page + 1);
+        }
     }
     render() {
+        const { loading, reviews } = this.state;
         return (
             <div className={styles.container}>
                 <button>Refresh</button>
-                {this.state.reviews.map(review => <Review key={review.reviewId} {...review} />)}
+                {reviews.map(review => <Review key={review.reviewId} {...review} />)}
+                {loading && <div className={styles.loading}>Loading...</div>}
             </div>
         );
     }

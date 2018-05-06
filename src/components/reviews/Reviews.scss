@@ -1,3 +1,10 @@
+@import '../../styles/palette';
+
 .container {
     margin: 32px auto;
+
+    .loading {
+        color: $dark-font;
+        text-align: center;
+    }
 }
