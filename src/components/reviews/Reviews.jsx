@@ -1,4 +1,5 @@
 import React from 'react';
+import Review from './review/Review';
 import styles from './Reviews.scss';
 
 class Reviews extends React.Component {
@@ -16,7 +17,12 @@ class Reviews extends React.Component {
             .catch(err => console.error(err));
     }
     render() {
-        return <div className={styles.container}>{this.state.reviews.length}</div>;
+        return (
+            <div className={styles.container}>
+                <button>Refresh</button>
+                {this.state.reviews.map(review => <Review key={review.reviewId} {...review} />)}
+            </div>
+        );
     }
 }
 

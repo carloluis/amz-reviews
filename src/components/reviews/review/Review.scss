@@ -1,0 +1,19 @@
+.container {
+    max-width: 750px;
+    height: 242px;
+    margin: 32px auto;
+    border: 1px solid;
+    border-radius: 16px;
+    padding: 32px;
+
+    .header {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .content {
+        & > span {
+            font-weight: 600;
+        }
+    }
+}
