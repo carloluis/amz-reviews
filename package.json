@@ -1,0 +1,22 @@
+{
+  "name": "amz-reviews",
+  "version": "1.0.0",
+  "description": "reviews demo",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carloluis/amz-reviews.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "infinite-scroll",
+    "demo"
+  ],
+  "author": "Carloluis Rodríguez <carloluisr@gmail.com> (https://github.com/carloluis)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carloluis/amz-reviews/issues"
+  },
+  "homepage": "https://github.com/carloluis/amz-reviews#readme"
+}
