@@ -1,15 +1,17 @@
-@import '../../styles/palette';
+@import '../../styles/palette.scss';
 
 .container {
     margin: 32px auto;
     display: flex;
     flex-direction: column;
     justify-content: start;
-    align-items: flex-end;
+
+    & > :first-child {
+        align-self: flex-end;
+    }
 
     .loading {
         color: $dark-font;
-        align-self: center;
         margin: 16px auto;
     }
 }

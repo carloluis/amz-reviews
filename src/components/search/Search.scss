@@ -1,0 +1,39 @@
+@import '../../styles/palette.scss';
+
+.container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+
+    &::after {
+        content: '⚲';
+        display: inline-block;
+        transform: rotate(-45deg);
+        transform-origin: center;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: $blue;
+        position: absolute;
+        right: 16px;
+    }
+
+    .search {
+        position: relative;
+        border: 1px solid $blue;
+        border-radius: 16px;
+        width: inherit;
+        height: 32px;
+        padding: 4px 32px 4px 24px;
+        font-size: 14px;
+        color: $blue;
+
+        &:focus {
+            outline-offset: 0;
+            outline: none;
+        }
+
+        &::placeholder {
+            color: $blue;
+        }
+    }
+}
