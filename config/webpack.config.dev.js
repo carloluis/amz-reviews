@@ -49,6 +49,13 @@ module.exports = merge(commonConfig, {
             errors: true
         },
         port: 3000,
-        hot: true
+        hot: true,
+        allowedHosts: ['.herokuapp.com'],
+        proxy: {
+            '/reviews': {
+                target: 'https://sellics-frontend-test.herokuapp.com',
+                changeOrigin: true
+            }
+        }
     }
 });

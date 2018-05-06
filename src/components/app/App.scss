@@ -1,0 +1,13 @@
+.container {
+    max-width: 95%;
+    min-height: 100vh;
+    margin: 8px auto;
+    padding: 8px;
+    border: 1px dotted;
+}
+
+@media screen and (min-width: 769px) {
+    .container {
+        max-width: 760px;
+    }
+}
