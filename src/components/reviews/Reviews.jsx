@@ -1,5 +1,6 @@
 import React from 'react';
 import Review from './review/Review';
+import Button from './button/Button';
 import styles from './Reviews.scss';
 
 class Reviews extends React.Component {
@@ -7,6 +8,7 @@ class Reviews extends React.Component {
         super(props);
 
         this.fetchReviews = this.fetchReviews.bind(this);
+        this.handleRefresh = this.handleRefresh.bind(this);
         this.handleScroll = this.handleScroll.bind(this);
 
         this.state = {
@@ -39,17 +41,22 @@ class Reviews extends React.Component {
     handleScroll() {
         const { loading, page } = this.state;
         const { documentElement } = document;
-        // https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight
         if (!loading && documentElement.scrollHeight - documentElement.scrollTop === documentElement.clientHeight) {
             this.fetchReviews(page + 1);
         }
+    }
+    handleRefresh() {
+        this.setState({ loading: true, reviews: [] });
+        this.fetchReviews(1);
     }
     render() {
         const { loading, reviews } = this.state;
         return (
             <div className={styles.container}>
-                <button>Refresh</button>
-                {reviews.map(review => <Review key={review.reviewId} {...review} />)}
+                <div className={styles.action}>
+                    <Button text="REFRESH" onClick={this.handleRefresh} />
+                </div>
+                <div>{reviews.map(review => <Review key={review.reviewId} {...review} />)}</div>
                 {loading && <div className={styles.loading}>Loading...</div>}
             </div>
         );

@@ -1,0 +1,21 @@
+@import '../../../styles/palette.scss';
+
+.button {
+    display: inline-block;
+    background: $dark-grey;
+    color: $white;
+    width: 160px;
+    height: 32px;
+    border-radius: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 32px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+        background: $dark-blue;
+    }
+}

@@ -8,6 +8,10 @@
     border-radius: 16px;
     padding: 32px;
 
+    &:first-child {
+        margin-top: 24px;
+    }
+
     .header {
         display: flex;
         justify-content: space-between;

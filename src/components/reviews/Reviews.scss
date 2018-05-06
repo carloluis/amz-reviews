@@ -3,6 +3,11 @@
 .container {
     margin: 32px auto;
 
+    .action {
+        display: flex;
+        justify-content: flex-end;
+    }
+
     .loading {
         color: $dark-font;
         text-align: center;
