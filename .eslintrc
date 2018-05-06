@@ -15,7 +15,7 @@
     },
     "plugins": ["react"],
     "rules": {
-        "no-console": ["error", { "allow": ["info", "warn", "error"] }],
+        "no-console": ["error", { "allow": ["info", "warn", "error", "group", "groupEnd"] }],
         "jsx-quotes": [1, "prefer-double"],
         "react/jsx-no-undef": 1,
         "react/jsx-uses-react": 1,

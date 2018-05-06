@@ -1,5 +1,5 @@
 import React from 'react';
-import Reviews from '../reviews/Reviews';
+import Reviews from '../reviews';
 import styles from './App.scss';
 
 // TODO: search, filters

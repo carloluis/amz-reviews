@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Review from './review/Review';
 import Button from './button/Button';
 import styles from './Reviews.scss';
@@ -6,60 +7,47 @@ import styles from './Reviews.scss';
 class Reviews extends React.Component {
     constructor(props) {
         super(props);
-
-        this.fetchReviews = this.fetchReviews.bind(this);
-        this.handleRefresh = this.handleRefresh.bind(this);
         this.handleScroll = this.handleScroll.bind(this);
-
-        this.state = {
-            reviews: [],
-            hasMore: false,
-            page: 1
-        };
     }
     componentDidMount() {
-        this.fetchReviews();
+        this.props.refreshReviews();
         window.addEventListener('scroll', this.handleScroll);
     }
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScroll);
     }
-    fetchReviews(page = 1) {
-        this.setState({ loading: true, page });
-
-        fetch(`/reviews/${page}`)
-            .then(response => response.json())
-            .then(({ reviews, hasMore }) => {
-                this.setState(state => ({ reviews: [...state.reviews, ...reviews], hasMore, loading: false }));
-                if (!hasMore) {
-                    this.componentWillUnmount();
-                }
-            })
-            .catch(err => console.error(err))
-            .finally(() => this.setState({ loading: false }));
-    }
     handleScroll() {
-        const { loading, page } = this.state;
+        const { loading, page, fetchReviews, hasMore } = this.props;
+        if (!hasMore) {
+            window.removeEventListener('scroll', this.handleScroll);
+        }
+
         const { documentElement } = document;
         if (!loading && documentElement.scrollHeight - documentElement.scrollTop === documentElement.clientHeight) {
-            this.fetchReviews(page + 1);
+            fetchReviews(page + 1);
         }
     }
-    handleRefresh() {
-        this.setState({ loading: true, reviews: [] });
-        this.fetchReviews(1);
-    }
     render() {
-        const { loading, reviews } = this.state;
+        const { loading, reviews, refreshReviews } = this.props;
 
         return (
             <div className={styles.container}>
-                <Button text="REFRESH" onClick={this.handleRefresh} />
+                <Button text="REFRESH" onClick={refreshReviews} />
                 <div>{reviews.map(review => <Review key={review.reviewId} {...review} />)}</div>
                 {loading && <div className={styles.loading}>Loading...</div>}
             </div>
         );
     }
 }
+
+Reviews.propTypes = {
+    refreshReviews: PropTypes.func.isRequired,
+    fetchReviews: PropTypes.func.isRequired,
+    reviews: PropTypes.array.isRequired,
+    loading: PropTypes.bool.isRequired,
+    hasMore: PropTypes.bool.isRequired,
+    page: PropTypes.number.isRequired,
+    error: PropTypes.bool.isRequired
+};
 
 export default Reviews;
