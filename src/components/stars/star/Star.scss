@@ -25,8 +25,16 @@
     }
 
     &.checked {
-        .square {
+        .square::after {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            position: absolute;
             background: $blue;
+            left: 2px;
+            top: 2px;
+            border-radius: 4px;
         }
     }
 }
