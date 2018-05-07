@@ -11,7 +11,7 @@ const Info = ({ title, text }) => (
 
 Info.propTypes = {
     title: PropTypes.string.isRequired,
-    text: PropTypes.node.isRequired
+    text: PropTypes.string.isRequired
 };
 
 export default Info;

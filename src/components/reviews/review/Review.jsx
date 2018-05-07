@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Info from '../info/Info';
+import { getDate, getStars } from '../../../utils';
 import styles from './Review.scss';
 
 const Review = ({ childAsin, content, created, productTitle, stars, title }) => (
     <div className={styles.container}>
         <div className={styles.header}>
             <i className={styles.image} />
-            <Info title="DATE" text={created} />
-            <Info title="STARS" text={stars} />
+            <Info title="DATE" text={getDate(created)} />
+            <Info title="STARS" text={getStars(stars)} />
             <Info title={childAsin} text={productTitle} />
         </div>
         <div className={styles.content}>
