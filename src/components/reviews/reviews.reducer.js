@@ -29,7 +29,7 @@ function reducer(state = DEFAULT_STATE, action) {
             return {
                 ...state,
                 loading: false,
-                error: action.error
+                error: !!action.error
             };
         case REFRESH_REVIEWS:
             return {

@@ -1,5 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const merge = require('webpack-merge');
+const webpack = require('webpack');
 const commonConfig = require('./webpack.common');
 
 module.exports = merge(commonConfig, {
@@ -46,6 +47,9 @@ module.exports = merge(commonConfig, {
     plugins: [
         new MiniCssExtractPlugin({
             filename: '[name].[chunkhash].css'
+        }),
+        new webpack.DefinePlugin({
+            'process.env.API_URL': JSON.stringify('https://sellics-frontend-test.herokuapp.com')
         })
     ]
 });

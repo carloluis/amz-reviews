@@ -38,7 +38,12 @@ module.exports = merge(commonConfig, {
             }
         ]
     },
-    plugins: [new webpack.HotModuleReplacementPlugin()],
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.DefinePlugin({
+            'process.env.API_URL': JSON.stringify('')
+        })
+    ],
     devServer: {
         compress: true,
         headers: {
@@ -50,7 +55,6 @@ module.exports = merge(commonConfig, {
         },
         port: 3000,
         hot: true,
-        allowedHosts: ['.herokuapp.com'],
         proxy: {
             '/reviews': {
                 target: 'https://sellics-frontend-test.herokuapp.com',
