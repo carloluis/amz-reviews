@@ -35,7 +35,9 @@ class Reviews extends React.Component {
             <section className={styles.container}>
                 <Button text="REFRESH" onClick={refreshReviews} />
                 <div>{reviews.map(review => <Review key={review.reviewId} {...review} />)}</div>
-                {loading && <Loading />}
+                <div className={styles.loading}>
+                    <Loading loading={loading} />
+                </div>
             </section>
         );
     }
