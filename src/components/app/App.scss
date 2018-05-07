@@ -1,12 +1,29 @@
+@import '../../styles/palette.scss';
+
 .container {
     max-width: 95%;
     margin: 16px auto;
     padding: 8px;
-    border: 1px dotted;
+
+    & > header {
+        color: $dark-font;
+    }
+
+    .filters {
+        position: sticky;
+        top: -2px;
+        background: $white;
+        padding: 16px 0;
+        opacity: 0.95;
+    }
 }
 
 @media screen and (min-width: 769px) {
     .container {
         max-width: 760px;
+
+        .filters {
+            padding-right: 300px;
+        }
     }
 }

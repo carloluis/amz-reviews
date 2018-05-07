@@ -31,11 +31,11 @@ class Reviews extends React.Component {
         const { loading, reviews, refreshReviews } = this.props;
 
         return (
-            <div className={styles.container}>
+            <section className={styles.container}>
                 <Button text="REFRESH" onClick={refreshReviews} />
                 <div>{reviews.map(review => <Review key={review.reviewId} {...review} />)}</div>
                 {loading && <div className={styles.loading}>Loading...</div>}
-            </div>
+            </section>
         );
     }
 }

@@ -8,8 +8,11 @@ import styles from './App.scss';
 const App = () => (
     <div className={styles.container}>
         <header>
-            <Search />
+            <h1>Reviews Demo</h1>
         </header>
+        <section className={styles.filters}>
+            <Search />
+        </section>
         <Reviews />
     </div>
 );
