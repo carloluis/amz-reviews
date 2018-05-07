@@ -1,0 +1,11 @@
+@import '../../styles/palette.scss';
+
+.container {
+    border: 1px dashed $dark-font;
+    padding: 8px;
+    color: $dark-font;
+
+    & > details {
+        cursor: pointer;
+    }
+}

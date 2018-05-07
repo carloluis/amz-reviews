@@ -1,4 +1,5 @@
 import React from 'react';
+import ErrorBoundary from '../error-boundary';
 import Reviews from '../reviews';
 import SearchFilter from '../search';
 import StarsFilter from '../stars';
@@ -14,14 +15,18 @@ const App = () => (
             <h1>Reviews Demo</h1>
         </header>
         <section className={styles.filters}>
-            <SearchFilter />
-            <div className={styles.grouping}>
-                <GroupBy />
-                <OrderBy />
-            </div>
-            <StarsFilter />
+            <ErrorBoundary>
+                <SearchFilter />
+                <div className={styles.grouping}>
+                    <GroupBy />
+                    <OrderBy />
+                </div>
+                <StarsFilter />
+            </ErrorBoundary>
         </section>
-        <Reviews />
+        <ErrorBoundary>
+            <Reviews />
+        </ErrorBoundary>
     </div>
 );
 
