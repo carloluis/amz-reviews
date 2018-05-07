@@ -2,5 +2,8 @@
 /node_modules
 /dist
 
+# script
+build.sh
+
 # logs
 yarn-error.log

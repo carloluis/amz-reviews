@@ -9,7 +9,15 @@ Clone repository and restore packages:
 ```bash
 git clone https://github.com/carloluis/amz-reviews.git
 cd amz-reviews
-yarn && yarn dev
+yarn
+```
+
+## Running
+
+Provide `API_URL` environment variable when running:
+
+```bash
+API_URL=<reviews-api-url> && yarn dev
 ```
 
 ## Features
@@ -17,3 +25,5 @@ yarn && yarn dev
 - Infinite Scroll
 - Search Filter
 - Stars Filter
+- Order By
+
