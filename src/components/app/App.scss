@@ -18,7 +18,14 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 144px;
+        min-height: 184px;
+
+        .grouping {
+            display: flex;
+            justify-content: space-between;
+            flex-flow: wrap;
+            margin: 16px 0;
+        }
     }
 }
 
