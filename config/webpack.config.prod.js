@@ -6,6 +6,7 @@ const commonConfig = require('./webpack.common');
 module.exports = merge(commonConfig, {
     mode: 'production',
     output: {
+        chunkFilename: '[name].[chunkhash].js',
         filename: '[name].[chunkhash].js',
         publicPath: './'
     },
