@@ -6,12 +6,12 @@ import styles from './Select.scss';
 class Select extends React.PureComponent {
     constructor(props) {
         super(props);
-        this.state = {
-            open: false,
-            value: props.selected
-        };
-        this.toggle = this.toggle.bind(this);
+
         this.handleSelect = this.handleSelect.bind(this);
+        this.toggle = this.toggle.bind(this);
+        this.state = {
+            open: false
+        };
     }
     toggle() {
         if (!this.props.disabled) {
@@ -21,17 +21,16 @@ class Select extends React.PureComponent {
     handleSelect(event) {
         const value = event.target.dataset.value;
         this.props.onSelect(value);
-        this.setState({ open: false, value });
+        this.toggle();
     }
     render() {
         const { selected, title, values, disabled } = this.props;
-        const { open, value } = this.state;
-        const text = selected || value || title;
+        const { open } = this.state;
 
         return (
             <div className={classes(styles.container, disabled && styles.disabled)}>
                 <div className={styles.input} onClick={this.toggle}>
-                    {text} <i className={styles.triangle}>{open ? '▲' : '▼'}</i>
+                    {selected || title} <i className={styles.triangle}>{open ? '▲' : '▼'}</i>
                 </div>
                 {open && <div className={styles.backdrop} onClick={this.toggle} />}
                 {open && (
