@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Review from './review/Review';
 import Button from './button/Button';
+import Review from './review/Review';
+import Loading from './loading/Loading';
 import styles from './Reviews.scss';
 
 class Reviews extends React.Component {
@@ -34,7 +35,7 @@ class Reviews extends React.Component {
             <section className={styles.container}>
                 <Button text="REFRESH" onClick={refreshReviews} />
                 <div>{reviews.map(review => <Review key={review.reviewId} {...review} />)}</div>
-                {loading && <div className={styles.loading}>Loading...</div>}
+                {loading && <Loading />}
             </section>
         );
     }

@@ -1,0 +1,47 @@
+@import '../../../styles/palette.scss';
+
+@mixin circle($delay: 0s) {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: $dark-blue;
+    border-radius: 50%;
+    animation: circle 1.5s ease-in-out infinite;
+    animation-delay: $delay;
+}
+
+@mixin pseudo-circle($delay: 0s) {
+    content: '';
+    position: absolute;
+    @include circle($delay);
+}
+
+.dots {
+    &::before {
+        @include pseudo-circle;
+        right: 16px;
+    }
+
+    position: relative;
+    @include circle(0.25s);
+
+    &::after {
+        @include pseudo-circle(0.5s);
+        left: 16px;
+    }
+}
+
+@keyframes circle {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}
