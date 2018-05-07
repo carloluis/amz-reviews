@@ -17,7 +17,7 @@ yarn
 Provide `API_URL` environment variable when running:
 
 ```bash
-API_URL=<reviews-api-url> && yarn dev
+API_URL=<reviews-api-url> yarn dev
 ```
 
 ## Features
