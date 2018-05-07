@@ -49,7 +49,7 @@ module.exports = merge(commonConfig, {
             filename: '[name].[chunkhash].css'
         }),
         new webpack.DefinePlugin({
-            'process.env.API_URL': JSON.stringify('https://sellics-frontend-test.herokuapp.com')
+            'process.env.API_URL': JSON.stringify(process.env.API_URL || '')
         })
     ]
 });

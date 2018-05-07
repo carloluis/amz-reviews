@@ -57,7 +57,7 @@ module.exports = merge(commonConfig, {
         hot: true,
         proxy: {
             '/reviews': {
-                target: 'https://sellics-frontend-test.herokuapp.com',
+                target: process.env.API_URL,
                 changeOrigin: true
             }
         }
