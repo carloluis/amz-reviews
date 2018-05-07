@@ -1,0 +1,32 @@
+@import '../../../styles/palette.scss';
+
+.container {
+    position: relative;
+    display: inline-flex;
+    justify-content: space-between;
+    user-select: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 8px 4px;
+    letter-spacing: 1px;
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    .square {
+        display: inline-block;
+        position: relative;
+        width: 24px;
+        height: 24px;
+        border: 2px solid $blue;
+        border-radius: 8px;
+        margin-right: 4px;
+    }
+
+    &.checked {
+        .square {
+            background: $blue;
+        }
+    }
+}

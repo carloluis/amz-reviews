@@ -1,6 +1,7 @@
 import React from 'react';
 import Reviews from '../reviews';
-import Search from '../search';
+import SearchFilter from '../search';
+import StarsFilter from '../stars';
 import styles from './App.scss';
 
 // TODO: filters
@@ -11,7 +12,8 @@ const App = () => (
             <h1>Reviews Demo</h1>
         </header>
         <section className={styles.filters}>
-            <Search />
+            <SearchFilter />
+            <StarsFilter />
         </section>
         <Reviews />
     </div>

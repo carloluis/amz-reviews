@@ -1,10 +1,7 @@
 import { UPDATE_SEARCH } from './search.actions';
 
 function reducer(state = '', action) {
-    if (action.type === UPDATE_SEARCH) {
-        return action.value;
-    }
-    return state;
+    return action.type === UPDATE_SEARCH ? action.value : state;
 }
 
 export default reducer;
