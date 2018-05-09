@@ -1,6 +1,6 @@
 import StarsConnected from './Stars.connected';
-import starsReducer from './stars.reducer';
+import starsReducer, { getStars } from './stars.reducer';
 
-export { starsReducer };
+export { starsReducer, getStars };
 
 export default StarsConnected;

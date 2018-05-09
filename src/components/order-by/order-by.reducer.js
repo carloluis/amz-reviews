@@ -5,3 +5,5 @@ function reducer(state = '', action) {
 }
 
 export default reducer;
+
+export const getOrder = state => state;

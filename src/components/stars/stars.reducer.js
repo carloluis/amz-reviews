@@ -11,3 +11,5 @@ function reducer(state = DEFAULT_STATE, action) {
 }
 
 export default reducer;
+
+export const getStars = state => state;

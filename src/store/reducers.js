@@ -1,9 +1,13 @@
 import { combineReducers } from 'redux';
 
-import { orderByReducer } from '../components/order-by';
-import { reviewsReducer } from '../components/reviews';
-import { searchReducer } from '../components/search';
-import { starsReducer } from '../components/stars';
+import { orderByReducer, getOrder as getOrderSelector } from '../components/order-by';
+import {
+    reviewsReducer,
+    getReviewsInfo as getReviewsInfoSelector,
+    getReviewsBySearch as getReviewsBySearchSelector
+} from '../components/reviews';
+import { searchReducer, getSearch as getSearchSelector } from '../components/search';
+import { starsReducer, getStars as getStarsSelector } from '../components/stars';
 
 const reducer = combineReducers({
     order: orderByReducer,
@@ -13,3 +17,9 @@ const reducer = combineReducers({
 });
 
 export default reducer;
+
+export const getOrder = ({ order }) => getOrderSelector(order);
+export const getReviewsInfo = ({ reviews }) => getReviewsInfoSelector(reviews);
+export const getReviewsBySearch = ({ reviews }, search) => getReviewsBySearchSelector(reviews, search);
+export const getSearch = ({ search }) => getSearchSelector(search);
+export const getStars = ({ stars }) => getStarsSelector(stars);
