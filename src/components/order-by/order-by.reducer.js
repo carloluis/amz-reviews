@@ -7,3 +7,5 @@ function reducer(state = '', action) {
 export default reducer;
 
 export const getOrder = state => state;
+export const getOrderFilter = (state, reviews) =>
+    state ? reviews.sort((r1, r2) => (r2.created - r1.created) * (state === 'Desc' ? 1 : -1)) : reviews;

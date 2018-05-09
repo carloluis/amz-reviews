@@ -13,3 +13,5 @@ function reducer(state = DEFAULT_STATE, action) {
 export default reducer;
 
 export const getStars = state => state;
+export const getStarFilter = (state, reviews) =>
+    state.length && state.length < 5 ? reviews.filter(review => state.includes(review.stars)) : reviews;

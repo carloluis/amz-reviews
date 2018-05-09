@@ -1,6 +1,6 @@
 import SearchConnected from './Search.connected';
-import searchReducer, { getSearch } from './search.reducer';
+import searchReducer, { getSearch, getSearchFilter } from './search.reducer';
 
-export { searchReducer, getSearch };
+export { searchReducer, getSearch, getSearchFilter };
 
 export default SearchConnected;
