@@ -43,3 +43,11 @@ function reducer(state = DEFAULT_STATE, action) {
 }
 
 export default reducer;
+
+export const getReviewsInfo = state => ({
+    data: state.data,
+    hasMore: state.hasMore,
+    loading: state.loading,
+    page: state.page,
+    error: state.error
+});

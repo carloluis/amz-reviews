@@ -1,6 +1,6 @@
 import Reviews from './Reviews.connected';
-import reviewsReducer from './reviews.reducer';
+import reviewsReducer, { getReviewsInfo } from './reviews.reducer';
 
-export { reviewsReducer };
+export { reviewsReducer, getReviewsInfo };
 
 export default Reviews;

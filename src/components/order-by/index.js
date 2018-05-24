@@ -1,6 +1,6 @@
 import OrderByConnected from './OrderBy.connected';
-import orderByReducer from './order-by.reducer';
+import orderByReducer, { getOrder, getOrderFilter } from './order-by.reducer';
 
-export { orderByReducer };
+export { orderByReducer, getOrder, getOrderFilter };
 
 export default OrderByConnected;
