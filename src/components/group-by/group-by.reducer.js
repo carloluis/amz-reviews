@@ -1,4 +1,5 @@
 import { GROUP_BY } from './group-by.actions';
+import { getDate, getMonthName } from '../../utils/get-date';
 import { groupBy } from '../../utils/groupby';
 
 function reducer(state = '', action) {
@@ -12,14 +13,15 @@ export const getGroupFilter = (state, reviews) => (state ? groupBy(reviews, sele
 
 const selector = group => review => {
     const date = new Date(review.created);
-    const [year, month] = [date.getFullYear(), date.getMonth()];
 
     switch (group) {
-        case 'Month':
-            return `${year}.${month}`;
+        case 'Month': {
+            const [year, month] = [date.getFullYear(), date.getMonth()];
+            return `${getMonthName(month)} of ${year}`;
+        }
         case 'Week':
-            throw new Error('Week functionality not implemented yet');
+            throw new Error('Week grouping not implemented yet');
         case 'Day':
-            return `${year}.${month}.${date.getDate()}`;
+            return getDate(date.getTime());
     }
 };

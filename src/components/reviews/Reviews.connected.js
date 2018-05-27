@@ -6,11 +6,10 @@ import Reviews from './Reviews';
 const mapStateToProps = state => {
     const { data, loading, hasMore, page, error } = getReviewsInfo(state);
 
-    const reviews = getOrderFilter(state, getStarFilter(state, getSearchFilter(state, data)));
-    const grouped = getGroupFilter(state, reviews);
+    const reviews = getGroupFilter(state, getOrderFilter(state, getStarFilter(state, getSearchFilter(state, data))));
 
     return {
-        reviews: grouped,
+        reviews,
         loading,
         hasMore,
         page,
