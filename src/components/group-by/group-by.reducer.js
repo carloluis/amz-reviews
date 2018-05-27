@@ -9,7 +9,7 @@ function reducer(state = '', action) {
 export default reducer;
 
 export const getGroup = state => state;
-export const getGroupFilter = (state, reviews) => (state ? groupBy(reviews, selector(state)) : reviews);
+export const getGroupFilter = (state, reviews) => groupBy(reviews, selector(state));
 
 const selector = group => review => {
     const date = new Date(review.created);
@@ -23,5 +23,7 @@ const selector = group => review => {
             throw new Error('Week grouping not implemented yet');
         case 'Day':
             return getDate(date.getTime());
+        default:
+            return '';
     }
 };

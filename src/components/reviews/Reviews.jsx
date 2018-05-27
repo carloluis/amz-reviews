@@ -30,18 +30,13 @@ class Reviews extends React.Component {
     }
     render() {
         const { loading, reviews, refreshReviews } = this.props;
-        let reviewsElements;
 
-        if (Array.isArray(reviews)) {
-            reviewsElements = reviews.map(review => <Review key={review.reviewId} {...review} />);
-        } else {
-            reviewsElements = Object.keys(reviews).map(group => (
-                <React.Fragment key={group}>
-                    <div>{group}</div>
-                    {reviews[group].map(review => <Review key={review.reviewId} {...review} />)}
-                </React.Fragment>
-            ));
-        }
+        const reviewsElements = reviews.map(({ key, values }) => (
+            <React.Fragment key={key}>
+                <div>{key}</div>
+                {values.map(review => <Review key={review.reviewId} {...review} />)}
+            </React.Fragment>
+        ));
 
         return (
             <section className={styles.container}>
@@ -58,7 +53,7 @@ class Reviews extends React.Component {
 Reviews.propTypes = {
     refreshReviews: PropTypes.func.isRequired,
     fetchReviews: PropTypes.func.isRequired,
-    reviews: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
+    reviews: PropTypes.array.isRequired,
     loading: PropTypes.bool.isRequired,
     hasMore: PropTypes.bool.isRequired,
     page: PropTypes.number.isRequired,
