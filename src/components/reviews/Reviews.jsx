@@ -31,10 +31,17 @@ class Reviews extends React.Component {
     render() {
         const { loading, reviews, refreshReviews } = this.props;
 
+        const reviewsElements = reviews.map(({ key, values }) => (
+            <React.Fragment key={key}>
+                {!!key && <div className={styles.groupInfo}>{key}</div>}
+                {values.map(review => <Review key={review.reviewId} {...review} />)}
+            </React.Fragment>
+        ));
+
         return (
             <section className={styles.container}>
                 <Button text="REFRESH" onClick={refreshReviews} />
-                <div>{reviews.map(review => <Review key={review.reviewId} {...review} />)}</div>
+                <div>{reviewsElements}</div>
                 <div className={styles.loading}>
                     <Loading loading={loading} />
                 </div>
