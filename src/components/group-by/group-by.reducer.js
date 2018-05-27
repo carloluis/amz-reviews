@@ -17,7 +17,7 @@ const selector = group => review => {
     switch (group) {
         case 'Month': {
             const [year, month] = [date.getFullYear(), date.getMonth()];
-            return `${getMonthName(month)} of ${year}`;
+            return `${getMonthName(month)} ${year}`;
         }
         case 'Week':
             throw new Error('Week grouping not implemented yet');

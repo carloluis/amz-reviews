@@ -10,6 +10,12 @@
         align-self: flex-end;
     }
 
+    .group-info {
+        text-transform: uppercase;
+        color: $light-font;
+        font-weight: 600;
+    }
+
     .loading {
         margin: 16px auto;
     }

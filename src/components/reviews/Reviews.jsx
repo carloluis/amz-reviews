@@ -33,7 +33,7 @@ class Reviews extends React.Component {
 
         const reviewsElements = reviews.map(({ key, values }) => (
             <React.Fragment key={key}>
-                <div>{key}</div>
+                {!!key && <div className={styles.groupInfo}>{key}</div>}
                 {values.map(review => <Review key={review.reviewId} {...review} />)}
             </React.Fragment>
         ));
