@@ -12,19 +12,17 @@ export default reducer;
 export const getGroup = state => state;
 export const getGroupFilter = (state, reviews) => groupBy(reviews, selector(state));
 
-const selector = group => review => {
+const selector = group => ({ created }) => {
+    const date = new Date(created);
+    const year = date.getFullYear();
+
     switch (group) {
-        case 'Month': {
-            const date = new Date(review.created);
-            const [year, month] = [date.getFullYear(), date.getMonth()];
-            return `${getMonthName(month)} ${year}`;
-        }
-        case 'Week': {
-            const date = new Date(review.created);
-            return `Week ${getWeek(review.created)} (${date.getFullYear()})`;
-        }
+        case 'Month':
+            return `${getMonthName(date.getMonth())} ${year}`;
+        case 'Week':
+            return `Week ${getWeek(created)} (${year})`;
         case 'Day':
-            return getDate(review.created);
+            return getDate(created);
         default:
             return '';
     }
