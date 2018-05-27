@@ -1,6 +1,11 @@
 import { combineReducers } from 'redux';
 
 import {
+    groupByReducer,
+    getGroup as getGroupSelector,
+    getGroupFilter as getGroupFilterSelector
+} from '../components/group-by';
+import {
     orderByReducer,
     getOrder as getOrderSelector,
     getOrderFilter as getOrderFilterSelector
@@ -18,6 +23,7 @@ import {
 } from '../components/stars';
 
 const reducer = combineReducers({
+    group: groupByReducer,
     order: orderByReducer,
     reviews: reviewsReducer,
     search: searchReducer,
@@ -26,6 +32,8 @@ const reducer = combineReducers({
 
 export default reducer;
 
+export const getGroup = ({ group }) => getGroupSelector(group);
+export const getGroupFilter = ({ group }, reviews) => getGroupFilterSelector(group, reviews);
 export const getOrder = ({ order }) => getOrderSelector(order);
 export const getOrderFilter = ({ order }, reviews) => getOrderFilterSelector(order, reviews);
 export const getReviewsInfo = ({ reviews }) => getReviewsInfoSelector(reviews);
