@@ -25,5 +25,9 @@ API_URL=<reviews-api-url> yarn dev
 - Infinite Scroll
 - Search Filter
 - Stars Filter
+- Group By
 - Order By
 
+## License
+
+MIT © [Carloluis](https://github.com/carloluis)
