@@ -11,8 +11,7 @@ const PATHS = {
 module.exports = {
     context: __dirname,
     entry: {
-        app: '../src',
-        sw: '../src/sw/index.js'
+        app: ['../src/sw', '../src']
     },
     output: {
         path: PATHS.dist,
