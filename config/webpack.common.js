@@ -1,15 +1,17 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 const PATHS = {
     src: path.join(__dirname, '../src'),
-    dist: path.join(__dirname, '../dist')
+    dist: path.join(__dirname, '../dist'),
+    sw: path.join(__dirname, '../service-worker')
 };
 
 module.exports = {
     context: __dirname,
     entry: {
-        app: '../src'
+        app: ['../src/sw', '../src']
     },
     output: {
         path: PATHS.dist,
@@ -46,6 +48,12 @@ module.exports = {
                 html5: true
             },
             mobile: true
-        })
+        }),
+        new CopyWebpackPlugin([
+            {
+                from: path.join(PATHS.sw, 'amz-sw.js'),
+                to: path.join(PATHS.dist, 'amz-sw.js')
+            }
+        ])
     ]
 };
