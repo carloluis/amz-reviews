@@ -5,11 +5,11 @@ self.addEventListener('install', event => {
 const regexReviewsPage = /\/reviews\/([0-9]+)$/;
 
 self.addEventListener('fetch', event => {
-    const [, page] = event.request.url.toString().match(regexReviewsPage) || [];
+    const [, page] = event.request.url.match(regexReviewsPage) || [];
     if (page) {
         event.respondWith(
             fetch(event.request).catch(err => {
-                console.warn(`Error fetching reviews/${page}:`, err);
+                console.warn(`[ServiceWorker] reviews/${page}:`, err);
                 const body = JSON.stringify(reviews[page]);
                 return new Response(body, {
                     status: 200,
