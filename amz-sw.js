@@ -10,7 +10,7 @@ self.addEventListener('fetch', event => {
         event.respondWith(
             fetch(event.request).catch(err => {
                 console.warn(`[ServiceWorker] reviews/${page}:`, err);
-                const body = JSON.stringify(reviews[page]);
+                const body = JSON.stringify(reviews[page - 1]);
                 return new Response(body, {
                     status: 200,
                     statusText: 'OK',
