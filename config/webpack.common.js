@@ -51,6 +51,10 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             {
+                from: path.join(PATHS.sw, 'reviews.json'),
+                to: path.join(PATHS.dist, 'reviews.json')
+            },
+            {
                 from: path.join(PATHS.sw, 'amz-sw.js'),
                 to: path.join(PATHS.dist, 'amz-sw.js')
             }
