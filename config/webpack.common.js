@@ -11,7 +11,7 @@ const PATHS = {
 module.exports = {
     context: __dirname,
     entry: {
-        app: ['../src/sw', '../src']
+        app: '../src'
     },
     output: {
         path: PATHS.dist,
@@ -47,7 +47,8 @@ module.exports = {
                 useShortDoctype: true,
                 html5: true
             },
-            mobile: true
+            mobile: true,
+            scripts: ['./sw.js']
         }),
         new CopyWebpackPlugin([
             {
@@ -57,6 +58,10 @@ module.exports = {
             {
                 from: path.join(PATHS.sw, 'amz-sw.js'),
                 to: path.join(PATHS.dist, 'amz-sw.js')
+            },
+            {
+                from: path.join(PATHS.sw, 'index.js'),
+                to: path.join(PATHS.dist, 'sw.js')
             }
         ])
     ]

@@ -1,5 +1,11 @@
 self.addEventListener('install', event => {
-    console.info(`[ServiceWorker] ${event.type}!`);
+    console.info(`[ServiceWorker] ${event.type}`);
+    self.skipWaiting();
+});
+
+self.addEventListener('activate', event => {
+    console.info(`[ServiceWorker] ${event.type}`);
+    event.waitUntil(self.clients.claim());
 });
 
 const regexReviewsPage = /\/reviews\/([0-9]+)$/;
@@ -11,7 +17,7 @@ self.addEventListener('fetch', event => {
             fetch(event.request)
                 .then(res => {
                     if (!res.ok) {
-                        console.warn(`[ServiceWorker] reviews/${page} with status ${res.status}`);
+                        console.info(`[ServiceWorker] reviews/${page} with status ${res.status}`);
                         return getResponse(page);
                     }
                     return res;
