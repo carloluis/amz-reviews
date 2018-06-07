@@ -33,6 +33,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: '../node_modules/html-webpack-template/index.ejs',
             title: 'Reviews Demo',
+            favicon: '../src/favicon.ico',
             appMountIds: ['app'],
             inject: false,
             meta: [
@@ -51,6 +52,10 @@ module.exports = {
             scripts: ['./sw.js']
         }),
         new CopyWebpackPlugin([
+            {
+                from: path.join(PATHS.src, 'favicon.ico'),
+                to: path.join(PATHS.dist, 'favicon.ico')
+            },
             {
                 from: path.join(PATHS.sw, 'reviews.json'),
                 to: path.join(PATHS.dist, 'reviews.json')
