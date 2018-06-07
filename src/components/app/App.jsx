@@ -14,7 +14,12 @@ const App = () => (
         <header>
             <h1>
                 Reviews Demo{' '}
-                <a href="https://github.com/carloluis/amz-reviews" title="GitHub Project">
+                <a
+                    href="https://github.com/carloluis/amz-reviews"
+                    title="GitHub Project"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     📃
                 </a>
             </h1>
