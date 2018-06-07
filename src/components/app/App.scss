@@ -7,6 +7,19 @@
 
     & > header {
         color: $dark-font;
+        position: relative;
+
+        a {
+            text-decoration: none;
+            padding: 0 8px;
+            color: $blue;
+            position: absolute;
+            transition: text-shadow 0.2s ease-in-out;
+
+            &:hover {
+                text-shadow: 3px 3px 3px $dark-font;
+            }
+        }
     }
 
     .filters {

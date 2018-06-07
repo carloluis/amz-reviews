@@ -12,7 +12,12 @@ import styles from './App.scss';
 const App = () => (
     <div className={styles.container}>
         <header>
-            <h1>Reviews Demo</h1>
+            <h1>
+                Reviews Demo{' '}
+                <a href="https://github.com/carloluis/amz-reviews" title="GitHub Project">
+                    📃
+                </a>
+            </h1>
         </header>
         <section className={styles.filters}>
             <ErrorBoundary>
