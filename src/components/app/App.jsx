@@ -7,8 +7,6 @@ import OrderBy from '../order-by';
 import GroupBy from '../group-by';
 import styles from './App.scss';
 
-// TODO: filters
-
 const App = () => (
     <div className={styles.container}>
         <header>
