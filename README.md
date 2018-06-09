@@ -28,6 +28,14 @@ API_URL=<reviews-api-url> yarn dev
 - Group By
 - Order By
 
+<details>
+<summary>Extra</summary>
+
+- Service Worker
+  - intercept [GitHub Page](https://carloluis.github.io/amz-reviews/ "Amazon Reviews Demo") api requests
+
+</details>
+
 ## License
 
 MIT © [Carloluis](https://github.com/carloluis)
