@@ -29,6 +29,29 @@ describe('Select', () => {
     beforeEach(() => {
         PROPS.onSelect.mockClear();
         wrapper = shallow(<Select {...PROPS} />);
+
+        expect(wrapper.state('open')).toBeFalsy();
+    });
+
+    it('should render the options when click on input', () => {
+        wrapper.find('.input').simulate('click');
+        expect(wrapper.state('open')).toBeTruthy();
+    });
+
+    it('should toggle the options by clicking on input', () => {
+        for (let time = 0; time < 5; time++) {
+            wrapper.find('.input').simulate('click');
+            expect(wrapper.state('open'))[time % 2 === 0 ? 'toBeTruthy' : 'toBeFalsy']();
+        }
+    });
+
+    it('should nnot toggle the options when disabled flag is on', () => {
+        wrapper.setProps({ disabled: true });
+
+        for (let time = 0; time < 5; time++) {
+            wrapper.find('.input').simulate('click');
+            expect(wrapper.state('open')).toBeFalsy();
+        }
     });
 
     it('should call onSelect when click on .option item', () => {
