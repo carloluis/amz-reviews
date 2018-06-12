@@ -25,14 +25,17 @@ API_URL=<reviews-api-url> yarn dev
 - Infinite Scroll
 - Search Filter
 - Stars Filter
-- Group By
-- Order By
+- Group by Day/Week/Month
+- Order by Asc/Desc (on time)
 
 <details>
-<summary>Extra</summary>
+<summary>Extras</summary>
 
-- Service Worker
-  - intercept [GitHub Page](https://carloluis.github.io/amz-reviews/ "Amazon Reviews Demo") api requests
+- Service Worker to intercept [GitHub Page](https://carloluis.github.io/amz-reviews/ "Amazon Reviews Demo") api requests
+- Specs (using Jest)
+- Webpack
+- Redux
+- Sass
 
 </details>
 
