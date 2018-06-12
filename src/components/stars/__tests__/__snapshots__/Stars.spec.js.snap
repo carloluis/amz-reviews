@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Stars/> snapshot 1`] = `
+<div
+  className="container"
+>
+  FILTER BY:
+  <div
+    className="stars"
+  >
+    <span
+      className="container checked"
+      onClick={[Function]}
+    >
+      <i
+        className="square"
+      />
+      <span>
+        1
+         ★
+      </span>
+    </span>
+    <span
+      className="container"
+      onClick={[Function]}
+    >
+      <i
+        className="square"
+      />
+      <span>
+        2
+         ★
+      </span>
+    </span>
+    <span
+      className="container"
+      onClick={[Function]}
+    >
+      <i
+        className="square"
+      />
+      <span>
+        3
+         ★
+      </span>
+    </span>
+    <span
+      className="container"
+      onClick={[Function]}
+    >
+      <i
+        className="square"
+      />
+      <span>
+        4
+         ★
+      </span>
+    </span>
+    <span
+      className="container checked"
+      onClick={[Function]}
+    >
+      <i
+        className="square"
+      />
+      <span>
+        5
+         ★
+      </span>
+    </span>
+  </div>
+</div>
+`;
