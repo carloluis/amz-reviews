@@ -45,7 +45,7 @@ describe('Select', () => {
         }
     });
 
-    it('should nnot toggle the options when disabled flag is on', () => {
+    it('should not toggle the options when disabled flag is on', () => {
         wrapper.setProps({ disabled: true });
 
         for (let time = 0; time < 5; time++) {
