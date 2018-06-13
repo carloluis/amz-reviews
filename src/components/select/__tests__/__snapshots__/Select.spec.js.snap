@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Select/> snapshot - open 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="input"
+    onClick={[Function]}
+  >
+    numbers
+     
+    <i
+      className="triangle"
+    >
+      ▲
+    </i>
+  </div>
+  <div
+    className="backdrop"
+    onClick={[Function]}
+  />
+  <div
+    className="options"
+  >
+    <div
+      className="option"
+      data-value="one"
+      onClick={[Function]}
+    >
+      one
+    </div>
+    <div
+      className="option"
+      data-value="two"
+      onClick={[Function]}
+    >
+      two
+    </div>
+    <div
+      className="option"
+      data-value="three"
+      onClick={[Function]}
+    >
+      three
+    </div>
+    <div
+      className="option"
+      data-value="four"
+      onClick={[Function]}
+    >
+      four
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Select/> snapshot 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="input"
+    onClick={[Function]}
+  >
+    numbers
+     
+    <i
+      className="triangle"
+    >
+      ▼
+    </i>
+  </div>
+</div>
+`;

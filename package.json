@@ -34,6 +34,8 @@
     "babel-preset-react": "^6.24.1",
     "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.11",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.19.1",
     "eslint-loader": "^2.0.0",
     "eslint-plugin-react": "^7.9.1",
@@ -62,12 +64,16 @@
     "whatwg-fetch": "^2.0.4"
   },
   "jest": {
-      "moduleNameMapper": {
-        "\\.(scss)$": "<rootDir>/src/__mocks__/styles.js"
-      },
-      "testPathIgnorePatterns": [
-          "/node_modules/",
-          "webpack"
-      ]
+    "moduleNameMapper": {
+      "\\.(scss)$": "<rootDir>/src/__mocks__/styles.js"
+    },
+    "setupFiles": [
+      "<rootDir>/src/__setup__/shim.js",
+      "<rootDir>/src/__setup__/enzyme.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "webpack"
+    ]
   }
 }
