@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Review/> snapshot 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="header"
+  >
+    <i
+      className="image"
+    />
+    <div
+      className="container"
+    >
+      <div
+        className="title"
+      >
+        DATE
+      </div>
+      <div
+        className="text"
+      >
+        13.6.2018
+      </div>
+    </div>
+    <div
+      className="container"
+    >
+      <div
+        className="title"
+      >
+        STARS
+      </div>
+      <div
+        className="text"
+      >
+        ★★★★★
+      </div>
+    </div>
+    <div
+      className="container"
+    >
+      <div
+        className="title"
+      >
+        childAsin?
+      </div>
+      <div
+        className="text"
+      >
+        Product Title
+      </div>
+    </div>
+  </div>
+  <div
+    className="content"
+  >
+    <span>
+      Title
+    </span>
+    <p>
+      Lorem ipsum
+    </p>
+  </div>
+</div>
+`;
