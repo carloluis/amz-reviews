@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Reviews/> snapshot - with reviews 1`] = `
+<section
+  className="container"
+>
+  <a
+    className="button"
+    onClick={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
+  >
+    REFRESH
+  </a>
+  <div>
+    <div
+      className="container"
+    >
+      <div
+        className="header"
+      >
+        <i
+          className="image"
+        />
+        <div
+          className="container"
+        >
+          <div
+            className="title"
+          >
+            DATE
+          </div>
+          <div
+            className="text"
+          >
+            13.6.2018
+          </div>
+        </div>
+        <div
+          className="container"
+        >
+          <div
+            className="title"
+          >
+            STARS
+          </div>
+          <div
+            className="text"
+          >
+            ★★★★★
+          </div>
+        </div>
+        <div
+          className="container"
+        >
+          <div
+            className="title"
+          >
+            childAsin?
+          </div>
+          <div
+            className="text"
+          >
+            Product Title
+          </div>
+        </div>
+      </div>
+      <div
+        className="content"
+      >
+        <span>
+          Title
+        </span>
+        <p>
+          Lorem ipsum
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    className="loading"
+  />
+</section>
+`;
+
+exports[`<Reviews/> snapshot 1`] = `
+<section
+  className="container"
+>
+  <a
+    className="button"
+    onClick={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
+  >
+    REFRESH
+  </a>
+  <div />
+  <div
+    className="loading"
+  />
+</section>
+`;

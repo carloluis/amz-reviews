@@ -1,6 +1,6 @@
 import { FETCH_REVIEWS_START, FETCH_REVIEWS_SUCCESS, FETCH_REVIEWS_ERROR, REFRESH_REVIEWS } from './reviews.actions';
 
-const DEFAULT_STATE = {
+export const DEFAULT_STATE = {
     data: [],
     hasMore: false,
     loading: false,
