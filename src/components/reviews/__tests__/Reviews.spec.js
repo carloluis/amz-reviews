@@ -13,8 +13,19 @@ const PROPS = {
 };
 
 describe('<Reviews/>', () => {
+    beforeEach(() => {
+        PROPS.refreshReviews.mockClear();
+        PROPS.fetchReviews.mockClear();
+    });
+    afterEach(() => {
+        expect(PROPS.refreshReviews).toHaveBeenCalled();
+    });
     it('snapshot', () => {
         const result = renderer.create(<Reviews {...PROPS} />);
+        expect(result).toMatchSnapshot();
+    });
+    it('snapshot - loading', () => {
+        const result = renderer.create(<Reviews {...PROPS} loading />);
         expect(result).toMatchSnapshot();
     });
     it('snapshot - with reviews', () => {

@@ -1,5 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Reviews/> snapshot - loading 1`] = `
+<section
+  className="container"
+>
+  <a
+    className="button"
+    onClick={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
+  >
+    REFRESH
+  </a>
+  <div />
+  <div
+    className="loading"
+  >
+    <div
+      className="dots"
+    />
+  </div>
+</section>
+`;
+
 exports[`<Reviews/> snapshot - with reviews 1`] = `
 <section
   className="container"
@@ -10,13 +43,8 @@ exports[`<Reviews/> snapshot - with reviews 1`] = `
       [MockFunction] {
         "calls": Array [
           Array [],
-          Array [],
         ],
         "results": Array [
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
           Object {
             "isThrow": false,
             "value": undefined,
