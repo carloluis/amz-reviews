@@ -2,6 +2,11 @@
 
 > Reviews Demo Project
 
+[![GitHub Page](https://img.shields.io/badge/GitHub-Page-brightgreen.svg)](https://carloluis.github.io/amz-reviews/ "Amazon Reviews Demo")
+[![GitHub license](https://img.shields.io/github/license/carloluis/amz-reviews.svg)](https://github.com/carloluis/amz-reviews/blob/master/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/carloluis/amz-reviews.svg)](https://github.com/carloluis/amz-reviews/stargazers)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier)
+
 ## Setup
 
 Clone repository and restore packages:
@@ -31,7 +36,7 @@ API_URL=<reviews-api-url> yarn dev
 <details>
 <summary>Extras</summary>
 
-- Service Worker to intercept [GitHub Page](https://carloluis.github.io/amz-reviews/ "Amazon Reviews Demo") api requests
+- Service Worker (intercept [GitHub Page](https://carloluis.github.io/amz-reviews/ "Amazon Reviews Demo") api requests)
 - Specs (using Jest)
 - Webpack
 - Redux
